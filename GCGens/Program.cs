@@ -56,6 +56,7 @@ class Program
         GC.WaitForPendingFinalizers();
         Console.WriteLine($"WeakReference canlı mı (sonra): {weak.IsAlive}");
 
+
         Console.WriteLine("\nDemo tamamlandı.");
     }
 
