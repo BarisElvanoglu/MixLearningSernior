@@ -42,6 +42,7 @@ class Program
         pencere[0] = 999; // Penceredeki değişiklik ana diziyi de değiştirir!
         Console.WriteLine($"Ana dizinin 3. elemanı değişti mi?: {anaDizi[2]}"); // 999 yazar
         Console.WriteLine("");
+        //span ref sutructtır, memory structter
 
 
         // --- MEMORY<T> ---
@@ -50,7 +51,7 @@ class Program
         Memory<int> bellek = anaDizi.AsMemory();
         await AsyncMetot(bellek);
         Console.WriteLine("");
-
+        //memory<T> struct olduğu için heap bölgesinde kullanımlarada açıktır.Bu yüzden async gibi yerlerde bunu kullanıyoruz.
 
         // --- ARRAYPOOL<T> ---
         // "Atma, kirala!" mantığı. Büyük dizileri sürekli oluşturup GC'yi yormamak için.
