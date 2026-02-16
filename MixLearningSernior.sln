@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCGens", "GCGens\GCGens.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LOH (Large Object Heap)", "LOH (Large Object Heap)\LOH (Large Object Heap).csproj", "{E3BBED5D-7852-44F5-ACD6-7084240CCA19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryAndSpan", "MemoryAndSpan\MemoryAndSpan.csproj", "{22834041-3623-46FB-96FF-0A8D5A9C752D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E3BBED5D-7852-44F5-ACD6-7084240CCA19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3BBED5D-7852-44F5-ACD6-7084240CCA19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3BBED5D-7852-44F5-ACD6-7084240CCA19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22834041-3623-46FB-96FF-0A8D5A9C752D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22834041-3623-46FB-96FF-0A8D5A9C752D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22834041-3623-46FB-96FF-0A8D5A9C752D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22834041-3623-46FB-96FF-0A8D5A9C752D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
