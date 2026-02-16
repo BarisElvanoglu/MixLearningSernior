@@ -20,19 +20,15 @@ class Program
         public Span<byte> Veri; // OK: Span bir ref struct'tır.
         // public object Obj;   // HATA! Ref struct içinde reference type (heap nesnesi) olamaz.
     }
-    public class Person {
-
-        public int Id { get; set; }
-
-    }
+ 
    
     static async Task Main(string[] args)
     {
         Console.WriteLine("=== .NET Modern Bellek Yönetimi Örnekleri ===\n");
-        
         // Küçük, geçici verileri GC'yi yormadan Stack'te ayırır.
         Console.WriteLine("1. stackalloc kullanımı (Stack üzerinde yer açma):");
-        Span<int> stackVerisi = stackalloc int[3] { 10, 20, 30 };
+        //Span referansların tutulduğu yer. stackalloc ile referanslar, newlenmeden Span olarak stackte tutulacak..
+        Span<int> stackVerisi = stackalloc int[3] { 10, 20, 30 };// stackte yer açtığı için scope bitince otomatik olarak kaybolur.
         foreach (var sayi in stackVerisi) Console.Write($"{sayi} ");
         Console.WriteLine("\n");
       
@@ -41,7 +37,7 @@ class Program
         // Veriyi kopyalamadan "dilimleme" (Slicing) yapar.
         Console.WriteLine("2. Span<T> ile kopyalamadan dilimleme (Slicing):");
         int[] anaDizi = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        int[] kopyadizi = anaDizi[2..7];
+        // 3, 4, 5, 6, 7,
         Span<int> pencere = anaDizi.AsSpan(2, 5); // 3. elemandan başla, 5 tane al (KOPYALAMAZ)
         pencere[0] = 999; // Penceredeki değişiklik ana diziyi de değiştirir!
         Console.WriteLine($"Ana dizinin 3. elemanı değişti mi?: {anaDizi[2]}"); // 999 yazar
@@ -99,3 +95,5 @@ class Program
         Console.WriteLine($"Async metot içinden Span ile erişim: {span[0]}");
     }
 }
+
+
