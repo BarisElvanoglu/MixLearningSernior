@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryAndSpanStackallloc", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalizerDestructorAndDispose", "FinalizerDestructorAndDispose\FinalizerDestructorAndDispose.csproj", "{68FB21EA-3F98-485F-A8E0-A9ABCFCE0110}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeekReference", "WeekReference\WeekReference.csproj", "{F6811897-672A-4BE5-AED0-6C7422B389DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{68FB21EA-3F98-485F-A8E0-A9ABCFCE0110}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68FB21EA-3F98-485F-A8E0-A9ABCFCE0110}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68FB21EA-3F98-485F-A8E0-A9ABCFCE0110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6811897-672A-4BE5-AED0-6C7422B389DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6811897-672A-4BE5-AED0-6C7422B389DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6811897-672A-4BE5-AED0-6C7422B389DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6811897-672A-4BE5-AED0-6C7422B389DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
