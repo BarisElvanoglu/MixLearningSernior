@@ -7,37 +7,37 @@ class Program
 
     static void Main()
     {
-        // 1. NORMAL LİSTE (Güçlü Referans)
-        var normalListe = new List<Person>();
-        var p1 = new Person { Name = "Ahmet" };
-        normalListe.Add(p1);
-        p1 = null; // Yerel referans koptu ama liste Ahmet'i tutuyor
-
-        // 2. WEAK LİSTE (Zayıf Referans)
         var weakListe = new List<WeakReference<Person>>();
-        var p2 = new Person { Name = "Mehmet" };
-        weakListe.Add(new WeakReference<Person>(p2));
-        p2 = null; // Yerel referans koptu, artık Mehmet'i kimse korumuyor
+        var liste = new List<Person>();
+        // İşlemi ayrı bir metodda yapıyoruz ki referans metod bitince ölsün
+        NesneOlusturVeEkle(weakListe);
+        NesneOlustur(liste);
+        Console.WriteLine("--- Temizlik Başlıyor ---");
 
-        //--------------------SONUÇ--------------------------//
-
-
-        Console.WriteLine("--- GC Öncesi ---");
-        Console.WriteLine($"Normal Liste[0]: {((Person)normalListe[0]).Name}"); // Ahmet
-        Console.WriteLine($"Weak Liste[0] Yaşıyor mu?: {weakListe[0].TryGetTarget(out _)}"); // True
-
-        GC.Collect(); // Çöpçüyü çağırıyoruz
+        // Kesin temizlik protokolü
+        GC.Collect();
         GC.WaitForPendingFinalizers();
+        GC.Collect();
 
-        Console.WriteLine("\n--- GC Sonrası ---");
-        Console.WriteLine($"Normal Liste[0]: {((Person)normalListe[0]).Name}"); // Hala Ahmet!
-
-        if (weakListe[0].TryGetTarget(out var p2Target))
-            Console.WriteLine($"Weak Liste[0]: {p2Target.Name}");
+        if (weakListe[0].TryGetTarget(out var target))
+            Console.WriteLine("Hala yaşıyor: " + target.Name);
         else
-            Console.WriteLine("Weak Liste[0]: Nesne RAM'den silinmiş (Mehmet uçtu!)");
+            Console.WriteLine("Mehmet nihayet silindi!");
 
+        Console.WriteLine(liste[0].Name);
         Console.ReadLine();
     }
-}
+
+    static void NesneOlusturVeEkle(List<WeakReference<Person>> liste)
+    {
+        var p2 = new Person { Name = "Mehmet" };
+        liste.Add(new WeakReference<Person>(p2));
+        // Metod bittiği an p2 yerel referansı ölür.
+    }
+    static void NesneOlustur(List<Person> liste1)
+    {
+        var p1 = new Person { Name = "Ahmet" };
+        liste1.Add(p1);
+        // Metod bittiği an p2 yerel referansı ölür.
+    }
 }

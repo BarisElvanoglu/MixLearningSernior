@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCGens", "GCGens\GCGens.csproj", "{1045B449-73CF-47E2-B5C3-F4FA6A4E36D8}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalizerDestructorAndDispose", "FinalizerDestructorAndDispose\FinalizerDestructorAndDispose.csproj", "{68FB21EA-3F98-485F-A8E0-A9ABCFCE0110}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeekReference", "WeekReference\WeekReference.csproj", "{F6811897-672A-4BE5-AED0-6C7422B389DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiThreadRaceConditionDeadlock", "MultiThreadRaceConditionDeadlock\MultiThreadRaceConditionDeadlock.csproj", "{2A8E29B8-E4C0-4359-A756-6A6AED53F678}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderWriterLockSlimVsLock", "ReaderWriterLockSlimVsLock\ReaderWriterLockSlimVsLock.csproj", "{8EB7DFF6-72F2-40A2-927B-C2CA2DEFF6EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{F6811897-672A-4BE5-AED0-6C7422B389DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6811897-672A-4BE5-AED0-6C7422B389DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6811897-672A-4BE5-AED0-6C7422B389DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8E29B8-E4C0-4359-A756-6A6AED53F678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8E29B8-E4C0-4359-A756-6A6AED53F678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8E29B8-E4C0-4359-A756-6A6AED53F678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8E29B8-E4C0-4359-A756-6A6AED53F678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB7DFF6-72F2-40A2-927B-C2CA2DEFF6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB7DFF6-72F2-40A2-927B-C2CA2DEFF6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB7DFF6-72F2-40A2-927B-C2CA2DEFF6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB7DFF6-72F2-40A2-927B-C2CA2DEFF6EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
