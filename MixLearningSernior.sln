@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiThreadRaceConditionDea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderWriterLockSlimVsLock", "ReaderWriterLockSlimVsLock\ReaderWriterLockSlimVsLock.csproj", "{8EB7DFF6-72F2-40A2-927B-C2CA2DEFF6EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volatile", "Volatile\Volatile.csproj", "{C62A3BFE-A418-4C68-A0E1-1BE64B34B604}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{8EB7DFF6-72F2-40A2-927B-C2CA2DEFF6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB7DFF6-72F2-40A2-927B-C2CA2DEFF6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EB7DFF6-72F2-40A2-927B-C2CA2DEFF6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C62A3BFE-A418-4C68-A0E1-1BE64B34B604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62A3BFE-A418-4C68-A0E1-1BE64B34B604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C62A3BFE-A418-4C68-A0E1-1BE64B34B604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C62A3BFE-A418-4C68-A0E1-1BE64B34B604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
