@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volatile", "Volatile\Volati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TplPlinq", "TplPlinq\TplPlinq.csproj", "{52443D84-0C52-4EEB-BBA6-2455DD1B0CF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOP-Aspect-Oriented-Programing", "AOP-Aspect-Oriented-Programing\AOP-Aspect-Oriented-Programing.csproj", "{842A9145-2C7A-4C13-8A17-8F4FC788CC21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{52443D84-0C52-4EEB-BBA6-2455DD1B0CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52443D84-0C52-4EEB-BBA6-2455DD1B0CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52443D84-0C52-4EEB-BBA6-2455DD1B0CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{842A9145-2C7A-4C13-8A17-8F4FC788CC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{842A9145-2C7A-4C13-8A17-8F4FC788CC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{842A9145-2C7A-4C13-8A17-8F4FC788CC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{842A9145-2C7A-4C13-8A17-8F4FC788CC21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
