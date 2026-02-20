@@ -1,84 +1,84 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace CqrsDemo
+namespace EventualConsistencyDemo
 {
-    // ==========================================================
-    // 1. MODELLER VE DTO'LAR (Data Transfer Objects)
-    // ==========================================================
-    public record Product(int Id, string Name, decimal Price); // Veritabanı modelimiz
-    public record ProductDto(string Name, string DisplayPrice); // Okuma tarafı için optimize edilmiş model
+    // 1. Veri Modelimiz
+    public record Product(int Id, string Name);
 
-    // ==========================================================
-    // 2. COMMAND TARAFI (Yazma İşlemleri)
-    // "Sistemin durumunu değiştiren ancak veri dönmeyen işlemler"
-    // ==========================================================
-
-    // Command Nesnesi: Bir ürünü oluşturmak için gereken veriler
-    public record CreateProductCommand(string Name, decimal Price);
-
-    // Command Handler: Yazma mantığının işletildiği yer
-    public class ProductCommandHandler
+    // 2. Sistem Sınıfı (Verinin nasıl dağıtıldığını simüle eder)
+    public class ProductService
     {
-        public void Handle(CreateProductCommand command)
+        // Mutlak tutarlı olan ana kaynak (Örn: SQL Server)
+        private readonly Dictionary<int, Product> _writeDatabase = new();
+
+        // Gecikmeli tutarlı olan hızlı kaynak (Örn: Redis veya ElasticSearch)
+        private readonly Dictionary<int, Product> _readDatabase = new();
+
+        // VERİ YAZMA (COMMAND)
+        public async Task SaveProductAsync(Product product)
         {
-            // Gerçek senaryoda burada DbContext.Add() ve SaveChanges() olur.
-            Console.WriteLine($"[COMMAND] Çalıştı: {command.Name} veritabanına eklendi.");
+            Console.WriteLine($"[1. ADIM] Veri ana veritabanına yazılıyor: {product.Name}");
+            _writeDatabase[product.Id] = product;
+
+            // Arka planda okuma veritabanını güncellemeye başla (BEKLEME YAPMA!)
+            _ = UpdateReadDatabaseAsync(product);
+
+            Console.WriteLine("[2. ADIM] Yazma işlemi kullanıcıya 'BAŞARILI' döndü.");
+        }
+
+        // Arka planda çalışan senkronizasyon (Gecikmeyi yaratan kısım burası)
+        private async Task UpdateReadDatabaseAsync(Product product)
+        {
+            // Sistemsel gecikme simülasyonu (Ağ trafiği, kuyruk bekleme vb.)
+            await Task.Delay(3000);
+
+            _readDatabase[product.Id] = product;
+            Console.WriteLine($"\n[BİLGİ] Okuma veritabanı GÜNCELLENDİ: {product.Name} artık sorgulanabilir.");
+        }
+
+        // VERİ OKUMA (QUERY)
+        public Product GetProductFromReadDb(int id)
+        {
+            _readDatabase.TryGetValue(id, out var product);
+            return product;
         }
     }
 
-    // ==========================================================
-    // 3. QUERY TARAFI (Okuma İşlemleri)
-    // "Sistemi değiştirmeyen, sadece veri dönen işlemler"
-    // ==========================================================
-
-    // Query Nesnesi: Filtreleme kriterlerini tutar
-    public record GetProductByIdQuery(int Id);
-
-    // Query Handler: Okuma mantığının (Sorgulama) işletildiği yer
-    public class ProductQueryHandler
-    {
-        public ProductDto Handle(GetProductByIdQuery query)
-        {
-            // Gerçek senaryoda burada veritabanından hızlıca (Dapper veya EF ile) veri çekilir.
-            // Örnek olması için statik bir veri dönüyoruz:
-            var dummyProduct = new Product(query.Id, "Oyuncu Bilgisayarı", 45000);
-
-            return new ProductDto(
-                Name: dummyProduct.Name,
-                DisplayPrice: $"{dummyProduct.Price:C2}" // Fiyatı formatlayarak dönüyoruz
-            );
-        }
-    }
-
-    // ==========================================================
-    // 4. ANA PROGRAM (Main)
-    // ==========================================================
+    // 3. ANA PROGRAM
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("--- CQRS Deseni Uygulama Örneği ---\n");
+            Console.WriteLine("--- Eventual Consistency Simülasyonu Başladı ---\n");
 
-            // --- YAZMA (COMMAND) AKIŞI ---
-            // Bir ürün eklemek istediğimizde sadece CommandHandler'ı kullanırız.
-            var command = new CreateProductCommand("Laptop", 25000);
-            var commandHandler = new ProductCommandHandler();
-            commandHandler.Handle(command);
+            var service = new ProductService();
+            int productId = 1;
 
-            Console.WriteLine("-----------------------------------");
+            // Yeni bir ürün kaydediyoruz
+            await service.SaveProductAsync(new Product(productId, "Akıllı Telefon"));
 
-            // --- OKUMA (QUERY) AKIŞI ---
-            // Bir veriyi ekranda göstermek istediğimizde sadece QueryHandler'ı kullanırız.
-            var query = new GetProductByIdQuery(123);
-            var queryHandler = new ProductQueryHandler();
-            var result = queryHandler.Handle(query);
+            // Kayıt hemen biter bitmez veriyi OKUMAYA çalışıyoruz
+            Console.WriteLine("\n[SORGU] Kayıttan hemen sonra veri okunuyor...");
+            var result1 = service.GetProductFromReadDb(productId);
 
-            Console.WriteLine($"[QUERY] Sonucu: Ürün Adı: {result.Name} | Fiyatı: {result.DisplayPrice}");
+            if (result1 == null)
+                Console.WriteLine("-> SONUÇ: Veri henüz hazır değil (Tutarsızlık Anı!)");
 
-            Console.WriteLine("\nİşlem tamamlandı. Çıkmak için bir tuşa basın.");
-            Console.ReadKey();
+            // Biraz bekliyoruz (Sistemin tutarlı hale gelmesi için süre tanıyoruz)
+            Console.WriteLine("\n[SİSTEM] 4 saniye bekleniyor...");
+            await Task.Delay(4000);
+
+            // Tekrar okuyoruz
+            Console.WriteLine("[SORGU] Tekrar okunuyor...");
+            var result2 = service.GetProductFromReadDb(productId);
+
+            if (result2 != null)
+                Console.WriteLine($"-> SONUÇ: Veri geldi: {result2.Name} (Sistem artık TUTARLI)");
+
+            Console.WriteLine("\nProgram sonlandı.");
         }
     }
 }
