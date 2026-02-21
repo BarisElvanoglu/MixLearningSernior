@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventual-Consistency", "Eve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distributed-Caching-REDIS-VSIn-Memory Caching", "CacheExample\Distributed-Caching-REDIS-VSIn-Memory Caching.csproj", "{7BFD0A1C-CECD-4242-A212-3B897F3CFA37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionTree", "ExpressionTree\ExpressionTree.csproj", "{D2674C42-188B-467D-A1EF-43924D701D92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{7BFD0A1C-CECD-4242-A212-3B897F3CFA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BFD0A1C-CECD-4242-A212-3B897F3CFA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BFD0A1C-CECD-4242-A212-3B897F3CFA37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2674C42-188B-467D-A1EF-43924D701D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2674C42-188B-467D-A1EF-43924D701D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2674C42-188B-467D-A1EF-43924D701D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2674C42-188B-467D-A1EF-43924D701D92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
