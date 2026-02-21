@@ -1,6 +1,6 @@
-﻿Web Host, sadece HTTP tabanlı web uygulamaları için özelleşmiş eski bir yapıyken; 
-Generic Host, web dahil her türlü uygulama tipine (Console, Background Service vb.)
-aynı standart altyapıyı (DI, Logging, Config) sunan modern ve kapsayıcı bir modeldir.
+﻿//Web Host, sadece HTTP tabanlı web uygulamaları için özelleşmiş eski bir yapıyken; 
+//Generic Host, web dahil her türlü uygulama tipine (Console, Background Service vb.)
+//aynı standart altyapıyı (DI, Logging, Config) sunan modern ve kapsayıcı bir modeldir.
 
 
 
