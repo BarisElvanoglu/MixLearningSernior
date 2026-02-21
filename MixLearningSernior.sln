@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionTree", "Expressio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roslyn", "Roslyn\Roslyn.csproj", "{5EC0AB24-2378-4CC7-A338-15F5343A04BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostVsGenericHost", "HostVsGenericHost\HostVsGenericHost.csproj", "{508C3620-7443-4292-96AD-A4C88C908161}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{5EC0AB24-2378-4CC7-A338-15F5343A04BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EC0AB24-2378-4CC7-A338-15F5343A04BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EC0AB24-2378-4CC7-A338-15F5343A04BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{508C3620-7443-4292-96AD-A4C88C908161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{508C3620-7443-4292-96AD-A4C88C908161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{508C3620-7443-4292-96AD-A4C88C908161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{508C3620-7443-4292-96AD-A4C88C908161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
