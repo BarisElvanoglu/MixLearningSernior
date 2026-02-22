@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcChatApp";
+
+service ChatService {
+  // Hem istemci hem sunucu sürekli veri akıtıyor (stream)
+  rpc JoinChat(stream ChatMessage) returns (stream ChatMessage);
+}
+
+message ChatMessage {
+  string user = 1;
+  string message = 2;
+}
