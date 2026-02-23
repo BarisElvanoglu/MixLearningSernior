@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCClient", "gRPCClient\gR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCHost", "gRPCHost\gRPCHost.csproj", "{AE4FE953-D0CA-421E-8CAE-767DD1F9462C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Client", "SignalR.Client\SignalR.Client.csproj", "{E0D40A29-7FA5-4658-B51A-BD6F76825809}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Host", "SignalR.Host\SignalR.Host.csproj", "{D343012E-5E81-4F39-9BC7-407BD9B06338}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +121,14 @@ Global
 		{AE4FE953-D0CA-421E-8CAE-767DD1F9462C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE4FE953-D0CA-421E-8CAE-767DD1F9462C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE4FE953-D0CA-421E-8CAE-767DD1F9462C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0D40A29-7FA5-4658-B51A-BD6F76825809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D40A29-7FA5-4658-B51A-BD6F76825809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D40A29-7FA5-4658-B51A-BD6F76825809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D40A29-7FA5-4658-B51A-BD6F76825809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D343012E-5E81-4F39-9BC7-407BD9B06338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D343012E-5E81-4F39-9BC7-407BD9B06338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D343012E-5E81-4F39-9BC7-407BD9B06338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D343012E-5E81-4F39-9BC7-407BD9B06338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
