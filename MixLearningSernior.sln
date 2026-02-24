@@ -43,6 +43,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Client", "SignalR.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Host", "SignalR.Host\SignalR.Host.csproj", "{D343012E-5E81-4F39-9BC7-407BD9B06338}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWT", "JWT\JWT.csproj", "{FC35E887-2F9C-4775-894B-AE61C936444D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitIntegrationFunctionalTest", "UnitIntegrationFunctionalTest\UnitIntegrationFunctionalTest.csproj", "{750A3AFA-1012-4D23-861A-A8D77E38E619}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +133,14 @@ Global
 		{D343012E-5E81-4F39-9BC7-407BD9B06338}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D343012E-5E81-4F39-9BC7-407BD9B06338}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D343012E-5E81-4F39-9BC7-407BD9B06338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC35E887-2F9C-4775-894B-AE61C936444D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC35E887-2F9C-4775-894B-AE61C936444D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC35E887-2F9C-4775-894B-AE61C936444D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC35E887-2F9C-4775-894B-AE61C936444D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750A3AFA-1012-4D23-861A-A8D77E38E619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750A3AFA-1012-4D23-861A-A8D77E38E619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750A3AFA-1012-4D23-861A-A8D77E38E619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750A3AFA-1012-4D23-861A-A8D77E38E619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
