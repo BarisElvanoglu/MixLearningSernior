@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWT", "JWT\JWT.csproj", "{F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitIntegrationFunctionalTest", "UnitIntegrationFunctionalTest\UnitIntegrationFunctionalTest.csproj", "{750A3AFA-1012-4D23-861A-A8D77E38E619}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moq-Substitute", "Moq-Substitute\Moq-Substitute.csproj", "{0992A692-1A1B-47B0-BDD4-B122956CFBAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{750A3AFA-1012-4D23-861A-A8D77E38E619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{750A3AFA-1012-4D23-861A-A8D77E38E619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{750A3AFA-1012-4D23-861A-A8D77E38E619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0992A692-1A1B-47B0-BDD4-B122956CFBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0992A692-1A1B-47B0-BDD4-B122956CFBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0992A692-1A1B-47B0-BDD4-B122956CFBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0992A692-1A1B-47B0-BDD4-B122956CFBAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
