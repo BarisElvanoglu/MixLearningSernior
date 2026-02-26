@@ -51,6 +51,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moq-Substitute", "Moq-Subst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHttpClientFactory-polly", "IHttpClientFactory-polly\IHttpClientFactory-polly.csproj", "{F8977B5C-FC84-4B5A-AE8C-088A4F308D55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternMatching", "PatternMatching\PatternMatching.csproj", "{5F221F32-C6A6-4155-912D-EFB85DA70493}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns", "DesignPatterns", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +157,10 @@ Global
 		{F8977B5C-FC84-4B5A-AE8C-088A4F308D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8977B5C-FC84-4B5A-AE8C-088A4F308D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8977B5C-FC84-4B5A-AE8C-088A4F308D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F221F32-C6A6-4155-912D-EFB85DA70493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F221F32-C6A6-4155-912D-EFB85DA70493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F221F32-C6A6-4155-912D-EFB85DA70493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F221F32-C6A6-4155-912D-EFB85DA70493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
